@@ -1,56 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-/**
- * Header
- *  - Logo
- *  - Nav Items
- * Body
- *  - Search
- *  - Restaurant Container
- *    - Restaurant Card
- *      - Img
- *      - Na,e of res, Star Rating, cuisine, delivery time
- * Footer
- *  - Copyright
- *  - Links
- *  - Address
- *  - Contact
- *
- */
-
-const Header = () => {
-  return <div className='header'>
-    <div><img className='logo' src="https://images.assetsdelivery.com/compings_v2/pshonka/pshonka2006/pshonka200600119.jpg" alt="logo" /></div>
-    <div className='nav-items'>
-      <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact Us</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-
-  </div>
-}
-
-const RestaurantCard = ({ resData }) => {
-  const baseImageUrl = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/'
-  const { cloudinaryImageId, name, cuisines, costForTwo, avgRating, deliveryTime } = resData?.data;
-
-
-  return (
-    <div className='res-card' style={{backgroundColor: '#f0f0f0'}}>
-      <img className='res-logo' src={baseImageUrl + cloudinaryImageId} alt="biryani"/>
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating}</h4>
-      <h4>{costForTwo / 2}</h4>
-      <h4>${costForTwo / 2} for 2</h4>
-      <h4>{deliveryTime}</h4>
-    </div>
-  )
-}
-
 const resData = [
   {
   "type": "restaurant",
@@ -2163,26 +2110,6 @@ const resData = [
   },
   "subtype": "basic"
   }
-  ]
-const Body = () => {
-  return (
-    <div className='body'>
-      <div className='search'>Search</div>
-      <div className='res-container'>
-        {
-          resData.map(restaurant => <RestaurantCard key={restaurant.data.id} resData={restaurant} />)
-        }
-      </div>
-    </div>
-  )
-}
+]
 
-const AppLayout = () => {
-  return <div className="app">
-    <Header />
-    <Body />
-  </div>
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />)
+export default resData;

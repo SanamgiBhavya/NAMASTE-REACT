@@ -17,4 +17,23 @@
 - Error Handling
 - Tree Shaking - remove unused code
 - Different dev and prod bundles
--
+
+
+# Namste food ordering app
+/**
+ * Header
+ *  - Logo
+ *  - Nav Items
+ * Body
+ *  - Search
+ *  - Restaurant Container
+ *    - Restaurant Card
+ *      - Img
+ *      - Na,e of res, Star Rating, cuisine, delivery time
+ * Footer
+ *  - Copyright
+ *  - Links
+ *  - Address
+ *  - Contact
+ *
+ */

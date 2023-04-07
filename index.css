@@ -32,8 +32,10 @@
   /* border: 2px solid grey; */
 }
 
-.search{
+.filter-btn{
   padding: 10px;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .res-container{
